@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Tạo form đơn giản2</title>
+    <meta name="viewport" content="">
+    <style>
+        div{
+            padding: 10px;
+            background-color: khaki;
+        }
+        input,select{
+            margin: 10px;
+
+        }
+        p{
+            color: blue;
+            background-color: aqua;
+            height: 30px;
+            text-align: left;
+            font-size: 25px;
+            margin: 0;
+            text
+        }
+        span{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <form action="" method="get">
+            <p>ĐĂNG KÝ HỌC VIÊN</p>
+            <span>Họ và tên </span><input type="textbox" name="name" ><br>
+            <span>Ngày sinh</span> <input type="date"><br>
+            <span>Giới tính</span>
+            <input type="radio" name=" gender" value="nam">Nam
+            <input type="radio" name=" gender" value="nữ">Nữ
+            <br>
+            <span>Lớp</span>
+            <select>
+                <option value="--Chọn lớp--" name="lop" >--Chọn lớp</option>
+                <option value="A" name="lop">A</option>
+                <option value="B" name="lop">B</option>
+                <option value="C" name="lop">C</option>
+            </select>
+            <br>
+            <span>Email </span><input type="email" name="email">
+            <br>
+            <span>Điện thoại </span><input type="tel" name="tel">
+            <br>
+            <input type="submit" value="Đăng ký">
+            <input type="reset" value="Nhập lại">
+
+
+        </form>
+    </div>
+
+</body>
+</html>
