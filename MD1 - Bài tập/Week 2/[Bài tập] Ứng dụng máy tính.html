@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Ứng dụng máy tính</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td colspan="4">
+         <input type="text" id="hienkq">
+        </td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value='(' onclick="nhapso('(')"></td>
+        <td><input type="button" value=')' onclick="nhapso(')')"></td>
+        <td><input type="button" value='%'onclick="nhapso('%')"></td>
+        <td><input id="reset" type="button" value="AC" onclick="ac()"></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value="7" onclick="nhapso(7)"></td>
+        <td><input type="button" value="8" onclick="nhapso(8)"></td>
+        <td><input type="button" value="9" onclick="nhapso(9)"></td>
+        <td><input type="button" value='/' onclick="nhapso('/')"></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value="4" onclick="nhapso(4)"></td>
+        <td><input type="button" value="5" onclick="nhapso(5)"></td>
+        <td><input type="button" value="6" onclick="nhapso(6)"></td>
+        <td><input type="button" value="*" onclick="nhapso('*')"></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value="1" onclick="nhapso(1)"></td>
+        <td><input type="button" value="2" onclick="nhapso(2)"></td>
+        <td><input type="button" value="3" onclick="nhapso(3)"></td>
+        <td><input type="button" value="-" onclick="nhapso('-')"></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value="0" onclick="nhapso(0)"></td>
+        <td><input type="button" value="." onclick="nhapso('.')"></td>
+        <td><input type="button" value="=" onclick="tinh()"></td>
+        <td><input type="button" value="+" onclick="nhapso('+')"></td>
+    </tr>
+
+
+</table>
+
+</body>
+</html>
+
+
+<script>
+
+    function nhapso(a){
+        document.getElementById("hienkq").value += a
+    }
+
+    function ac(){
+        document.getElementById("hienkq").value = ""
+    }
+
+    function tinh(){
+        document.getElementById("hienkq").value = eval(ocument.getElementById("hienkq").value)
+    }
+
+</script>
