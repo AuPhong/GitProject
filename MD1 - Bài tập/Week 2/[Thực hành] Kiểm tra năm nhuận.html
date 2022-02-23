@@ -15,20 +15,21 @@
     var namNhuan = false
     var nam = prompt("Nhập vào năm:")
 
-    if(nam%400 == 0){
+    if(nam%4){
         if(nam%100 == 0){
-           namNhuan = true;
-        }
-        else{
-            if(nam%4 ==0){
-                namNhuan = true;
+            if(nam%400 == 0){
+                namNhuan = true
             }
             else{
-                namNhuan = false;}
+                namNhuan = false
+            }
+        }
+        else{
+            namNhuan = true;
         }
     }
     else{
-
+        namNhuan = false;
     }
 
     if(namNhuan){

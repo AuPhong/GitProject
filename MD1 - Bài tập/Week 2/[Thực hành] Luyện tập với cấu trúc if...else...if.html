@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Luyện tập với cấu trúc if...else...if</title>
+</head>
+<body>
+
+
+</body>
+</html>
+
+<script>
+
+    var a = prompt("Nhập tên người dùng: ")
+    if(a == "Admin"){
+        var b = prompt("Nhập mật khẩu")
+        if(b == "TheMaster"){
+            alert("Welcome")
+        }
+        else if(b==""){
+            alert("Cancel")
+        }
+    }
+    else if(a==""){
+        alert("Cancel")
+    }
+    else {
+        alert("I don't know you.")
+    }
+
+</script>
