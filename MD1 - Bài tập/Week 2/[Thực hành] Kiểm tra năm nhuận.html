@@ -12,32 +12,16 @@
 
 <script>
 
-    var namNhuan = false
-    var nam = prompt("Nhập vào năm:")
 
-    if(nam%4){
-        if(nam%100 == 0){
-            if(nam%400 == 0){
-                namNhuan = true
-            }
-            else{
-                namNhuan = false
-            }
-        }
+        let nhuan = false
+        let year = +prompt()
+        if(year%4==0 && year%100!=0 || year%100==0 && year%400==0){
+        alert(year+" là năm nhuận")
+    }
         else{
-            namNhuan = true;
-        }
-    }
-    else{
-        namNhuan = false;
+        alert(year+" không phải là năm nhuận")
     }
 
-    if(namNhuan){
-        document.write(nam+" là năm nhuận")
-    }
-    else{
-        document.write(nam+" không phải là năm nhuận")
-    }
 
 
 </script>
