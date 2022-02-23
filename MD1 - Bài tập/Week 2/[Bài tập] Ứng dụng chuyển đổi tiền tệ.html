@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Ứng dụng chuyển đổi tiền tệ</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From curentcy</th>
+            <th>To currentcy</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="number" id="amount"></td>
+            <td>
+                <select name="1" id="from">
+                    <option value="vietnam">VND</option>
+                    <option value="my">USD</option>
+                </select></td>
+            <td>
+                <select name="2" id="to">
+                    <option value="my">USD</option>
+                    <option value="vietnam">VND</option>
+                </select>
+            </td>
+            <td>
+                <input type="button" value="Convert" onclick="convert()">
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+<script>
+
+    function convert(){
+        let a = document.getElementByID("amount").value
+        a = parseInt(a)
+        if(document.getElementByID("from").value=="vietnam" && document.getElementByID("to").value=="my"){
+            let kq = a*22600
+            document.write("Result:"+" "+ kq)
+        }
+        else if(document.getElementByID("from").value=="my" && document.getElementByID("to").value=="vietnam"){
+            let kq1 = a*0.000044
+            document.write("Result:"+" "+ kq1)
+        }
+        else{
+            document.write("Result:"+" "+a)
+        }
+
+    }
+
+</script>

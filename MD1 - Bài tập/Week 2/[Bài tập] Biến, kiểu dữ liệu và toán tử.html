@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<input type="button" value="Tính điểm" onclick="tinhdiem()">
+<input type="button" value="Chuyển đổi nhiệt độ" onclick="chuyendoi()">
+<input type="button" value="Tính diện tích hình tròn" onclick="tron()">
+<input type="button" value="Tính chu vi hình tròn" onclick="tron1()">
+</body>
+</html>
+
+
+<script>
+
+    function tinhdiem() {
+        let a = prompt("Điểm vật lý:")
+        let b = prompt("Điểm hóa học:")
+        let c = prompt("Điểm sinh học:")
+
+        a = parseInt(a);
+        b = parseInt(b);
+        c = parseInt(c);
+
+        document.write("Tổng điểm:" + " " + (a + b + c) + "<br>");
+        document.write("Điểm trung bình:" + " " + (a + b + c) / 3);
+    }
+
+
+    function chuyendoi(){
+        let c = prompt("Nhập vào giá trị độ C:")
+        c = parseInt(c);
+        let f = c*(9/5)+32;
+        document.write("Giá trị độ F là:"+" "+f)
+    }
+
+    function tron(){
+        let a = prompt("Nhập vào bán kính:")
+        a = parseInt(a)
+        let bk = Math.PI*Math.pow(a,2)
+        document.write("Diện tích hình tròn là:"+" "+bk)
+    }
+
+    function tron1(){
+        let a = prompt("Nhập vào bán kính:")
+        a = parseInt(a)
+        let cv = 2 * Math.PI * a
+        document.write("Chu vi hình tròn là:"+" "+cv)
+    }
+
+
+</script>
