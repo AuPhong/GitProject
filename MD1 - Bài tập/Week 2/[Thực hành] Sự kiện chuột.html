@@ -5,6 +5,26 @@
     <title>[Thực hành] Sự kiện chuột</title>
 </head>
 <body>
-<img src="" alt="This is an image"
+<img src="ball.png" alt="This is an image" id="ball">
+<br>
+<input type="button" value="Di chuyển" onclick="sangphai()">
 </body>
 </html>
+
+
+<script>
+
+    let ball = document.getElementById("ball")
+
+    function macdinh(){
+        ball.style.position = "relative"
+        ball.style.left = 0 +"px"
+    }
+
+    function sangphai(){
+        ball.style.left = parseInt(ball.style.left) + 10 +"px"
+    }
+
+    window.onload = macdinh()
+
+</script>

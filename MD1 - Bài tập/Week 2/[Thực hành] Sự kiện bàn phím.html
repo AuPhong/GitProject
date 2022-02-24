@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Sự kiện bàn phím</title>
+</head>
+<body>
+<img src="nobita.png" alt="This is an image" id="nobita">
+</body>
+</html>
+
+<script>
+
+    let nobita = document.getElementById("nobita");
+
+    function macdinh(){
+        nobita.style.position = 'relative'
+        nobita.style.left = 0+'px';
+        nobita.style.top = 0+'px';
+    }
+macdinh();
+
+    function dichuyen(evt){
+        console.log('hien thi: ',evt.keyCode)
+        switch (evt.keyCode){
+            case 38:
+                nobita.style.top = parseInt(nobita.style.top)-20+'px'
+                break
+            case 40:
+                nobita.style.top = parseInt(nobita.style.top)+20+'px'
+                break
+            case 37:
+                nobita.style.left = parseInt(nobita.style.left)-20+'px'
+                break
+            case 39:
+                nobita.style.left = parseInt(nobita.style.left)+20+'px'
+                break
+
+        }
+
+    }
+
+    // nobita.addEventListener('keypress', dichuyen)
+    function docReady() {
+        console.log('goi docReady')
+        window.addEventListener('keydown', dichuyen);
+        console.log('sau an phim')
+    }
+    window.onload = docReady;
+
+
+
+</script>
