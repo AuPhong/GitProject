@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Game puzzle</title>
+</head>
+<body>
+<img src="img/cat1.jpg" alt="" onclick="chuyen()" id="dong1">
+</body>
+</html>
+
+
+<script>
+
+    let check = document.getElementById('dong1').src;
+
+    function chuyen() {
+        let img1 = document.getElementById('dong1')
+        console.log(img1.src)
+        }
+
+        if (check = 'img/cat1.jpg') {
+            check = 'img/monkey1.jpg'
+        }
+        if (check = 'img/monkey1.jpg') {
+            check = 'img/panda1.jpg'
+        }
+        if(check = 'img/panda1.jpg'){
+            check = 'img/cat1.jpg'
+        }
+
+
+
+    }
+
+    // function chuyen(){
+    //     document.getElementById('dong1').src = 'img/monkey1.jpg'
+    // }function chuyen1(){
+    //     document.getElementById('dong1').src = 'img/panda1.jpg'
+    // }function chuyen2(){
+    //     document.getElementById('dong1').src = 'img/cat1.jpg'
+    // }
+
+</script>

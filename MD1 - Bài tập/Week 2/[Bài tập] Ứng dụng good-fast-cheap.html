@@ -6,9 +6,9 @@
 </head>
 <body>
 
-<input type="range"  id="good" min="0" max="5"  style="max-width: 40px" onclick="chuyengood()"><b>Good</b><br>
-<input type="range" id="cheap" min="0" max="5"  style="max-width: 40px" onclick="chuyencheap()"><b>Cheap</b><br>
-<input type="range" id="fast" min="0" max="5"  style="max-width: 40px" onclick="chuyenfast()"><b>Fast</b>
+<input type="range" id="good" min="0" max="5" style="max-width: 40px" onclick="moveGood()"><b>Good</b><br>
+<input type="range" id="cheap" min="0" max="5" style="max-width: 40px" onclick="moveCheap()"><b>Cheap</b><br>
+<input type="range" id="fast" min="0" max="5" style="max-width: 40px" onclick="moveFast()"><b>Fast</b>
 
 </body>
 </html>
@@ -16,57 +16,56 @@
 
 <script>
 
-    let good = document.getElementById('good')
-    let cheap = document.getElementById('cheap')
-    let fast = document.getElementById('fast')
 
-    function macdinh(){
-        good.value = 5
-        cheap.value = 5
-        fast.value = 5
-    }
+    // function macDinh(){
+    //     good.value = 5
+    //     cheap.value = 0
+    //     fast.value = 5
+    // }
+    let good = false;
+    let cheap = false;
+    let fast = false;
 
-    function chuyengood(){
-        if(good.value == 0){
-            good.value +=5
+    function moveGood() {
+        console.log('good đầu vào ', good)
+        good = !good;
+        if (good) {
+            document.getElementById('good').value = 5
+            if (cheap && fast) {
+                document.getElementById('fast').value = 0;
+                fast = false;
+            }
         }
-        else{
-            good.value -=5
-        }
-    }
-
-    function chuyencheap(){
-        if(cheap.value == 0){
-            cheap.value +=5
-        }
-        else{
-            cheap.value -=5
+        else {
+            good = document.getElementById('good').value = 0
         }
     }
 
-    function chuyenfast(){
-        if(fast.value == 0){
-            fast.value +=5
+    function moveCheap() {
+        cheap = !cheap;
+        if (cheap) {
+            cheap = document.getElementById('cheap').value = 5
+            if (good && fast) {
+                document.getElementById('good').value = 0;
+                good = false;
+            }
         }
-        else{
-            fast.value -=5
-        }
-    }
-
-    function macdinh2() {
-        if (good.value == 5 && cheap.value == 5) {
-            fast.value = 0
-        } else if (good.value == 5 && fast.value == 5) {
-            cheap.value = 0
-        } else {
-            good.value = 0
+        else {
+            cheap = document.getElementById('cheap').value = 0
         }
     }
 
-    document.addEventListener('click', macdinh2)
-
-
-    window.onload(macdinh())
-
-
+    function moveFast() {
+        fast = !fast;
+        if (fast) {
+            cheap = document.getElementById('cheap').value = 5
+            if (good && cheap) {
+                document.getElementById('cheap').value = 0;
+                cheap = false;
+            }
+        }
+        else {
+            cheap = document.getElementById('cheap').value = 0
+        }
+    }
 </script>

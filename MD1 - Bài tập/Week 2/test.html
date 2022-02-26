@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="img/cat1.jpg" alt="" onclick="changeImg()" id="row1">
+<img src="img/panda2.jpg" alt="" onclick="changeImg2()" id="row2">
+<img src="img/monkey3.jpg" alt="" onclick="changeImg3()" id="row3">
+</body>
+</html>
+
+<script>
+
+
+
+    let count1 = 0;
+    let count2 = 0;
+    let count3 = 0;
+    let cat = 0
+    let monkey = 0
+    let panda = 0
+
+    img1 = [
+        'img/cat1.jpg',
+        'img/monkey1.jpg',
+        'img/panda1.jpg'
+    ]
+
+    img2 = [
+        'img/panda2.jpg',
+        'img/monkey2.jpg',
+        'img/cat2.jpg'
+    ]
+
+    img3 = [
+        'img/monkey3.jpg',
+        'img/cat3.jpg',
+        'img/panda3.jpg'
+    ]
+
+    function changeImg(){
+        let row1 = document.getElementById('row1')
+        count1++
+        if (count1 >= img1.length){
+            count1 = 0
+        }
+        row1.src = img1[count1]
+        if(cat<=3 && count1 ==1){
+            cat++
+        }
+            cat=0
+
+        if(monkey<=3 && count1 ==2){
+            monkey++
+        }
+        monkey=0
+
+        if(panda<=3 && count1 ==3){
+            panda++
+        }
+        panda=0
+    }
+
+    function changeImg2(){
+        let row2 = document.getElementById('row2')
+        count2++
+        if(count2>=img2.length){
+            count2 = 0
+        }
+        row2.src = img2[count2]
+
+        if(cat<=3 && count2 ==3){
+            cat++
+        }
+        cat=0
+
+        if(monkey<=3 && count2 ==2){
+            monkey++
+        }
+        monkey=0
+
+        if(panda<=3 && count2 ==1){
+            panda++
+        }
+        panda=0
+    }
+
+    function changeImg3(){
+        let row3 = document.getElementById('row3')
+        count3++
+        if(count3 >= img3.length){
+            count3 = 0
+        }
+        row3.src = img3[count3]
+
+        if(cat<=3 && count3 ==2){
+            cat++
+        }
+        cat=0
+
+        if(monkey<=3 && count3 ==1){
+            monkey++
+        }
+        monkey=0
+
+        if(panda<=3 && count3 ==3){
+            panda++
+        }
+        panda=0
+    }
+
+    function check(){
+        if(cat == 3){
+            alert('Win')
+        }
+        else if(monkey == 3){
+            alert('win')
+        }
+        else if(panda == 3){
+            alert('wiin')
+        }
+    }
+
+    // function check(){
+    //     if(count1==1 && count2==3 && count3==2 || count1==2 && count2==2 && count3==1 || count1==1 && count2==2 && count3==3){
+    //         alert('Win')
+    //     }
+    // }
+
+    window.onload = check
+
+
+
+
+    // let count1 = 0;
+    // function changeImg() {
+    //
+    //     let img1 = [
+    //         'img/cat1.jpg',
+    //         'img/monkey1.jpg',
+    //         'img/panda1.jpg'
+    //     ]
+    //     let row1 = document.getElementById('row1')
+    //     count1++
+    //     if (count1 >= img1.length) {
+    //         count1 = 0
+    //     }
+    //     row1.src = img1[count1]
+    // }
+
+
+</script>
