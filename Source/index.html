@@ -1,8 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
 
@@ -10,17 +13,57 @@
 </html>
 
 <script>
-   var table = "<table border='1px'>"
-   var a
-    for(var i = 1; i<=10; i++){
 
-        table = table + "<tr>"
-        for(let j = 1; j<=10; j++){
-            a = i*j
-            table = table + "<td>"+a+"</td>"
+    // let a = prompt()
+    // let b = prompt()
+    // for(;a<=b;a++){
+    //     if(a%2==0){
+    //         document.write(a)
+    //     }
+    // }
+
+    // let a = +prompt()
+    // let b = +prompt()
+    // let sum = 0
+    // for(;a<=b;a++){
+    //     sum = sum+a
+    // }
+    // document.write(sum)
+
+
+    // let a = +prompt()
+    // let b = +prompt()
+    // let sum = 1
+    // for(;a<=b;a++){
+    //     sum = sum*a
+    // }
+    // document.write(sum)
+
+    // let a = +prompt()
+    // let b = +prompt()
+    // let count = 0
+    // for(;a<=b;a++){
+    //     if (a%3==0){
+    //         count++
+    //     }
+    // }
+    // document.write(count)
+
+
+    let a = prompt()
+    let check=false
+let arr = [4, 7, 2, 8 ,1, 6]
+    for(let i=0; i<arr.length; i++) {
+        if (arr[i]==a) {
+            console.log(i)
         }
-        table = table + "</tr>"
     }
-    document.write(table)
+
+
+
+
+
+
+
 
 </script>

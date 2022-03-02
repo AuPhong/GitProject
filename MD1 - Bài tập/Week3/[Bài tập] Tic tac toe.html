@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h2 id="caro"></h2>
+    <input type="button" value="Chơi" onclick="start()">
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    let caro = document.getElementById('caro')
+    let board = []
+    let data = ''
+    for(let i=0; i<5; i++){
+        board[i] = new Array('.' ,'.' ,'.' ,'.' ,'.')
+    }
+    for (let i=0; i<5; i++){
+        for (let j=0; j<5; j++){
+            data += board[i][j] + '&nbsp;&nbsp;&nbsp;'
+        }
+        data += '<br>'
+    }
+    caro.innerHTML = data
+
+    function start(){
+         let count1 = 0
+         let count2 = 0
+        data = ''
+        alert('Người 1 nhập')
+        let positionX1 = prompt()
+        let positionY1 = prompt()
+        board[positionX1][positionY1] = 'x'
+        // alert('Người 2 nhập')
+        // let positionX2 = prompt()
+        // let positionY2 = prompt()
+        // board[positionX2][positionY2] = 'o'
+        for (let i=0; i<5; i++){
+            for (let j=0; j<5; j++){
+                data += board[i][j] + '&nbsp;&nbsp;&nbsp;'
+                if (board[i][j]==board[i][j+1]&&board[i][j]=='x'){
+                    count1++
+                }
+            }
+            data += '<br>'
+        }
+        caro.innerHTML = data
+
+
+        if (count1==2){
+            alert('1 win')
+        }
+
+
+    }
+
+</script>

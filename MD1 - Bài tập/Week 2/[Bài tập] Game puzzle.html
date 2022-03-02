@@ -3,35 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <title>[Bài tập] Game puzzle</title>
+    <style>
+
+        #dong3,#dong1, #dong2, #dong4, #dong5 {
+            width: 800px;
+        }
+
+    </style>
 </head>
 <body>
-<img src="img/cat1.jpg" alt="" onclick="chuyen()" id="dong1">
+<img src="img/cat1.jpg" alt="" id="dong1" onclick="change1()"><br>
+<img src="img/monkey2.jpg" alt="" id="dong2" onclick="change2()"><br>
+<img src="img/panda3.jpg" alt="" id="dong3" onclick="change3()"><br>
+<img src="img/monkey4.jpg" alt="" id="dong4" onclick="change4()"><br>
+<img src="img/cat5.jpg" alt="" id="dong5" onclick="change5()">
+
 </body>
 </html>
 
 
 <script>
+    let count1 = 0
+    let count2 = 0
+    let count3 = 0
+    let count4 = 0
+    let count5 = 0
 
-    let check = document.getElementById('dong1').src;
+    let dong1 = document.getElementById('dong1')
+    let dong2 = document.getElementById('dong2')
+    let dong3 = document.getElementById('dong3')
+    let dong4 = document.getElementById('dong4')
+    let dong5 = document.getElementById('dong5')
 
-    function chuyen() {
-        let img1 = document.getElementById('dong1')
-        console.log(img1.src)
+    function change1() {
+        count1++
+        if (count1 == 1) {
+            dong1.src = 'img/monkey1.jpg'
+        } else if (count1 == 2) {
+            dong1.src = 'img/panda1.jpg'
+        } else {
+            dong1.src = 'img/cat1.jpg'
+            count1 = 0
         }
+        check()
+    }
 
-        if (check = 'img/cat1.jpg') {
-            check = 'img/monkey1.jpg'
+    function change2() {
+        count2++
+        if (count2 == 1) {
+            dong2.src = 'img/monkey2.jpg'
+        } else if (count2 == 2) {
+            dong2.src = 'img/panda2.jpg'
+        } else {
+            dong2.src = 'img/cat2.jpg'
+            count2 = 0
         }
-        if (check = 'img/monkey1.jpg') {
-            check = 'img/panda1.jpg'
-        }
-        if(check = 'img/panda1.jpg'){
-            check = 'img/cat1.jpg'
-        }
-
-
+        check()
 
     }
+
+    function change3() {
+        count3++
+        if (count3 == 1) {
+            dong3.src = 'img/monkey3.jpg'
+        } else if (count3 == 2) {
+            dong3.src = 'img/panda3.jpg'
+        } else {
+            dong3.src = 'img/cat3.jpg'
+            count3 = 0
+        }
+        check()
+    }
+
+    function change4() {
+        count4++
+        if (count4 == 1) {
+            dong4.src = 'img/monkey4.jpg'
+        } else if (count4 == 2) {
+            dong4.src = 'img/panda4.jpg'
+        } else {
+            dong4.src = 'img/cat4.jpg'
+            count4 = 0
+        }
+        check()
+    }
+
+    function change5() {
+        count5++
+        if (count5 == 1) {
+            dong5.src = 'img/monkey5.jpg'
+        } else if (count5 == 2) {
+            dong5.src = 'img/panda5.jpg'
+        } else {
+            dong5.src = 'img/cat5.jpg'
+            count5 = 0
+        }
+        check()
+    }
+
+    function check(){
+        console.log('count1----',count1)
+        console.log('count2----',count2)
+        console.log('count3----',count3)
+        console.log('count4----',count4)
+        console.log('count5----',count5)
+        if (count1==count2 && count2==count3 && count3==count4 && count4==count5){
+            dong1.style.boxShadow = 'red 4px 4px 9px'
+            dong2.style.boxShadow = 'red 4px 4px 9px'
+            dong3.style.boxShadow = 'red 4px 4px 9px'
+            dong4.style.boxShadow = 'red 4px 4px 9px'
+            dong5.style.boxShadow = 'red 4px 4px 9px'
+        }
+        else{
+            dong1.style.boxShadow = 'blue 4px 4px 9px'
+            dong2.style.boxShadow = 'blue 4px 4px 9px'
+            dong3.style.boxShadow = 'blue 4px 4px 9px'
+            dong4.style.boxShadow = 'blue 4px 4px 9px'
+            dong5.style.boxShadow = 'blue 4px 4px 9px'
+        }
+    }
+
+
+
+
+
+
+
 
     // function chuyen(){
     //     document.getElementById('dong1').src = 'img/monkey1.jpg'

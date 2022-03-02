@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập vòng lặp 01</title>
+    <input type="button" onclick="start()" value="Chơi" id="button">
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    // // Bài 1:
+    // for(let i=1; i<=100; i++){
+    //     document.write(i+'<br>')
+    //     if (i==99){
+    //         alert("Đã hoàn thành")
+    //         break
+    //     }
+    // }
+
+    // Bài 2
+
+    // for(let a = prompt('Nhập vào nhiệt độ');;){
+    //     if(a>100){
+    //         alert("Yêu cầu giảm nhiệt độ")
+    //         break
+    //     }
+    //     else if(a<20){
+    //         alert("Yêu cầu tăng nhiệt độ")
+    //         break
+    //     }
+    //     else{
+    //         a = prompt()
+    //     }
+    // }
+
+    //Bài 3
+
+    // function Fibonacci(n) {
+    //     let f0 = 1
+    //     let f1 = 1
+    //     let fn = 2
+    //     if (n <= 0 || n==1) {
+    //         return 1
+    //     }
+    //     else if (n == 2){
+    //         return n
+    //     }
+    //     else {
+    //         for(let i = 1; i<n; i++){
+    //             f0 = f1
+    //             f1 = fn
+    //             fn = f0 + f1
+    //         }
+    //     }
+    //     return fn
+    // }
+    //
+    // for(let i=0; i<=20; i++){
+    //     document.write(Fibonacci(i) + "<br>")
+    // }
+
+
+    // Bài 4:
+
+    // function Fibonacci(n){
+    //     let f0 = 0;
+    //     let f1 = 1;
+    //     let fn = 1;
+    //     if(n<0){
+    //         return -1
+    //     }
+    //     else if(n==0 || n==1){
+    //         return n
+    //     }
+    //     else{
+    //         for(let i=3; i<=n; i++){
+    //             f0 = f1
+    //             f1 = fn
+    //             fn = f0 + f1
+    //         }
+    //         return fn
+    //     }
+    // }
+    //
+    // for(let i=0; i<20; i++){
+    //     if (Fibonacci(i)%5==0 && Fibonacci(i)!=0){
+    //         document.write(Fibonacci(i))
+    //         break
+    //     }
+    // }
+
+    // Bài 5
+    // function Fibonacci(n){
+    //     let f0 = 0
+    //     let f1 = 1
+    //     let fn = 1
+    //     if(n<0){
+    //         return -1
+    //     }
+    //     else if(n==0 || n==1){
+    //         return n
+    //     }
+    //     else{
+    //         for(let i=3; i<=n; i++){
+    //             f0 = f1
+    //             f1 = fn
+    //             fn = f0 + f1
+    //         }
+    //         return fn
+    //     }
+    // }
+    // var sum = 0
+    // for(let i=1; i<=7; i++){
+    //     console.log(Fibonacci(i))
+    //     sum = sum + Fibonacci(i)
+    // }
+    // document.write(sum)
+
+    // Bài 6
+    // var sum = 0
+    // let n =30;
+    //     for (let i = 1;i<=(n*7);i++) {
+    //         if (i % 7 == 0) {
+    //             console.log(i)
+    //             sum = sum + i
+    //         }
+    //     }
+    // document.write(sum)
+
+    //Bài 7
+    // for(let i=0; i<=100; i++){
+    //     if(i%5==0&& i%3==0){
+    //         document.write("FizzBuzz<br>")
+    //     }
+    //     else if(i%5==0){
+    //         document.write('Buzz<br>')
+    //     }
+    //     else if(i%3==0){
+    //         document.write('Fizz<br>')
+    //     }
+    //     else{
+    //         document.write(i+"<br>")
+    //     }
+    // }
+
+
+    //Bài 8
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
+
+
+    let turn = 0
+    function start(){
+        alert('Nhập vào khoảng số')
+        let min = +prompt('Nhập vào giá trị min')
+        let max = +prompt('Nhập vào giá trị max')
+
+        let b=random(min, max)
+
+        for(let i=0;;i++){
+            document.write(b)
+            let a=+prompt("Đoán 1 số")
+
+            if(a===b){
+                alert('Chúc mừng bạn')
+                break
+            }
+            else if(a>b){
+                alert('Số bạn nhập lớn hơn')
+            }
+            else if(a<b){
+                alert('Số bạn nhập nhỏ hơn')
+            }
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+</script>

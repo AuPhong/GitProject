@@ -8,7 +8,9 @@
 
 <input type="range" id="good" min="0" max="5" style="max-width: 40px" onclick="moveGood()"><b>Good</b><br>
 <input type="range" id="cheap" min="0" max="5" style="max-width: 40px" onclick="moveCheap()"><b>Cheap</b><br>
-<input type="range" id="fast" min="0" max="5" style="max-width: 40px" onclick="moveFast()"><b>Fast</b>
+<input type="range" id="fast" min="0" max="5" style="max-width: 40px" onclick="moveFast()"><b>Fast</b><br>
+
+
 
 </body>
 </html>
@@ -18,10 +20,11 @@
 
 
     // function macDinh(){
-    //     good.value = 5
+    //     good.value = 0
     //     cheap.value = 0
-    //     fast.value = 5
+    //     fast.value = 0
     // }
+
     let good = false;
     let cheap = false;
     let fast = false;
@@ -68,4 +71,6 @@
             cheap = document.getElementById('cheap').value = 0
         }
     }
+
+    // window.onload = macDinh
 </script>
