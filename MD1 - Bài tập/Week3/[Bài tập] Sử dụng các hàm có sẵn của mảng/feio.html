@@ -11,21 +11,34 @@
 
 <script>
 
-    let number = window.prompt('Insert a number')
-    let result = [number[0]]
+    // let number = window.prompt('Insert a number')
+    // let result = [number[0]]
+    //
+    // function add(a) {
+    //     if (value[i - 1] % 2 == 0 && value[i] % 2 == 0) {
+    //         result.push('-' + value[i])
+    //     } else {
+    //         result.push(value[i])
+    //     }
+    // }
+    //
+    // number.forEach(add(a))
+    // console.log(result.join(''))
 
-    function add(a){
-        if (value[i-1]%2==0 && value[i]%2==0){
-            result.push('-'+value[i])
+
+    //CODE NEW
+    let value = prompt("Nhập vào  số")
+    let string = value;
+    let arr = string.split('');
+    let result = [];
+    arr.forEach(function (str, index) {
+        if ((arr[index - 1] % 2 === 0) && (arr[index] % 2 === 0)) {
+            result.push('-', str);
+        } else {
+            result.push(str);
         }
-        else{
-            result.push(value[i])
-        }
-    }
-
-    number.forEach(add(a))
-    console.log(result.join(''))
-
+    });
+    document.write(result.join(''));
     // for(let i=1; i<number.length; i++){
     //     if(number[i-1]%2==0 && number[i]%2==0){
     //         result.push('-',number[i])
@@ -35,5 +48,9 @@
     //     }
     // }
     // console.log(result.join(''))
-
+    // let arr = ['1', '2', '3', '4']
+    // arr.forEach((value, index) => {
+    //     console.log('value == ', index)
+    //     console.log('index', value)
+    // })
 </script>
