@@ -13,56 +13,16 @@
 </html>
 
 <script>
-
-    // let a = prompt()
-    // let b = prompt()
-    // for(;a<=b;a++){
-    //     if(a%2==0){
-    //         document.write(a)
-    //     }
-    // }
-
-    // let a = +prompt()
-    // let b = +prompt()
-    // let sum = 0
-    // for(;a<=b;a++){
-    //     sum = sum+a
-    // }
-    // document.write(sum)
-
-
-    // let a = +prompt()
-    // let b = +prompt()
-    // let sum = 1
-    // for(;a<=b;a++){
-    //     sum = sum*a
-    // }
-    // document.write(sum)
-
-    // let a = +prompt()
-    // let b = +prompt()
-    // let count = 0
-    // for(;a<=b;a++){
-    //     if (a%3==0){
-    //         count++
-    //     }
-    // }
-    // document.write(count)
-
-
-    let a = prompt()
-    let check=false
-let arr = [4, 7, 2, 8 ,1, 6]
-    for(let i=0; i<arr.length; i++) {
-        if (arr[i]==a) {
-            console.log(i)
+    let iMax = 3
+    let jMax = 4
+    let arr = []
+    for(let i=0; i<3; i++){
+        arr[i] = new Array()
+        for(let j=0; j<4; j++){
+            arr[i][j] = prompt()
         }
     }
-
-
-
-
-
+    console.log(arr)
 
 
 

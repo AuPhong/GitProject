@@ -26,19 +26,16 @@
     }
     caro.innerHTML = data
 
+    let player1 = false
+
     function start() {
-        // let countHorizon = 0
-        // let countVertical = 0
-        // let countDiagonal = 0
+        player1 = !player1
         data = ''
+        if (player1){
         alert('Người 1 nhập')
         let positionX1 = prompt('Nhập x')
         let positionY1 = prompt('Nhập y')
         board[positionX1][positionY1] = 'x'
-        alert('Người 2 nhập')
-        let positionX2 = prompt()
-        let positionY2 = prompt()
-        board[positionX2][positionY2] = 'o'
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
                 data += board[i][j] + '&nbsp;&nbsp;&nbsp;'
@@ -46,7 +43,21 @@
             data += '<br>'
         }
 
-        caro.innerHTML = data
+        caro.innerHTML = data}
+        else{
+            alert('Người 2 nhập')
+            let positionX2 = prompt('Nhập x')
+            let positionY2 = prompt('Nhập y')
+            board[positionX2][positionY2] = '0'
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    data += board[i][j] + '&nbsp;&nbsp;&nbsp;'
+                }
+                data += '<br>'
+            }
+
+            caro.innerHTML = data
+        }
 
         for(let i = 0; i<3; i++){
                 if (board[i][0]==board[i][1] && board[i][1]==board[i][2] && board[i][1]=='x'){
