@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Xây dựng lớp mô tả điện thoại</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    let Mobile = function (battery, onWritingMess, receivedMess, sentMess, power){
+        if (battery>100){
+            battery = 100
+        }
+        else if (battery<0){
+            battery=0
+        }
+        onWritingMess = []
+        receivedMess = []
+        sentMess = []
+        this.battery = battery
+        this.onWritingMess = onWritingMess
+        this.receivedMess = receivedMess
+        this.sentMess = sentMess
+        this.checkPower = function (){
+            if (power=='on'){
+                return 'Phone is on'
+            }
+            else if (power=='off'){
+                return 'Phone is off'
+            }
+            else{
+                return 'Phone is die'
+            }
+        }
+        this.turnOn = function (){
+            return power = 'on'
+        }
+        this.charge = function (num){
+            this.battery+=num
+        }
+        this.writingMess = function (abc){
+            if (power == 'on'){
+                onWritingMess.push(abc)
+                this.battery-=1
+            }
+        }
+        this.send = function (){
+
+        }
+
+
+    }
+
+    let mobile = new Mobile(90,7,7,7,'off')
+    let a = mobile.charge(1)
+
+    let b = mobile.battery
+    console.log(b)
+    console.log(a)
+    console.log(mobile.checkPower())
+    mobile.writingMess('abc')
+    console.log(mobile.onWritingMess)
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+
+<label>Fahrenheit &nbsp;<input type="number" id="fTemp" placeholder="Insert F value" oninput="convertFtoC()"></label><br>
+Celcius:&nbsp;<span id="cTemp"></span>
+
+</body>
+</html>
+
+<script>
+
+    function convertFtoC() {
+        let f = document.getElementById('fTemp').value
+        document.getElementById('cTemp').innerHTML = (f - 32) / 1.8
+    }
+
+
+
+
+
+</script>

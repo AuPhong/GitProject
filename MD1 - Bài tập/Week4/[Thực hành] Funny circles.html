@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Funny circles</title>
+</head>
+<body onclick="drawCircle()">
+
+<canvas id="randomCircle" width="1250px" height="600px" style="border: solid 1px"></canvas>
+
+</body>
+</html>
+
+<script>
+let circle = function (x, y, radius){
+    radius = parseFloat(radius)
+    this.x = x
+    this.y = y
+    this.radius = radius
+}
+
+function getRandomHex(){
+    return Math.floor(Math.random()*255)
+}
+
+function drawCircle(){
+
+    let x = Math.random()*window.innerWidth
+    let y = Math.random()*window.innerHeight
+    let radius = Math.random()*80
+    let circle0 = new circle(x, y, radius)
+    var c = document.getElementById('randomCircle')
+    var ctx = c.getContext('2d')
+    ctx.beginPath()
+    ctx.arc(circle0.x, circle0.y, circle0.radius,0,2*Math.PI)
+    ctx.fillStyle = "rgb("+getRandomHex()+","+getRandomHex()+","+getRandomHex()+")"
+    ctx.fill()
+}
+
+drawCircle()
+
+
+</script>

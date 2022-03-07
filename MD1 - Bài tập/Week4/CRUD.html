@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD</title>
+    <style>
+        table {
+            width: 100%;
+            border: solid 1px;
+            border-spacing: unset;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid;
+        }
+
+        th {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<h1>Student manager</h1>
+<span id="notify"></span>
+<input type="text" id="studentName">
+<input type="button" value="Create" onclick="createStudent()">
+<input type="text" id="searchStudent" placeholder="Search here" oninput="actionSearch()">
+<button onclick="actionSearch()">Search</button>
+<br><br>
+<table>
+    <tr>
+        <th>STT</th>
+        <th>Họ tên</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tbody id="tbody">
+
+    </tbody>
+</table>
+</body>
+</html>
+
+<script>
+    let studentList = ['Black Dog', 'Yellow Cat', 'Blue Bird', 'Gradient Human']
+let studentSearch = []
+    function showList() {
+        let drawTable = ''
+        for (let i = 0; i < studentList.length; i++) {
+            drawTable += `<tr>
+                            <td>${i + 1}</td>
+                            <td>${studentList[i]}</td>
+                            <td><button onclick="editStudent(${i})">Edit</button></td>
+                            <td><button onclick="deleteStudent(${i})">Delete</button></td>
+                          </tr>`
+        }
+        document.getElementById('tbody').innerHTML = drawTable
+    }
+
+    showList()
+
+    function createStudent() {
+        let studentName = document.getElementById('studentName').value
+        if (studentName = studentName.trim()) {
+            studentList.push(studentName)
+            showList()
+            document.getElementById('notify').innerHTML = `<span style="color: green">Sucessful to creat new student</span>`
+        } else {
+            document.getElementById('notify').innerHTML = `<span style="color: red">Please enter student name</span>`
+        }
+    }
+
+    function editStudent(index) {
+        let edit = prompt('Input put the student name to edit: ', studentList[index])
+        studentList[index] = edit
+        showList()
+    }
+
+    function deleteStudent(index) {
+        console.log(index)
+        studentList.splice(index,1)
+        showList()
+    }
+
+    function showSearch(){
+        let drawTable = ''
+        for (let i=0; i<studentSearch.length; i++){
+            drawTable += `<tr>
+                               <td>${i+1}</td>
+                               <td>${studentSearch[i]}</td>
+                               <td><button onclick="editStudent(${i})">Edit</button></td>
+                               <td><button onclick="deleteStudent(${i})">Delete</button></td>
+                          </tr>`
+        }
+        document.getElementById('tbody').innerHTML = drawTable
+    }
+
+    function actionSearch(){
+        // studentSearch = studentSearch.splice(0,studentSearch.length)
+        studentSearch = [];
+        let searchValue = document.getElementById('searchStudent').value
+        let searchLC = searchValue.toLowerCase()
+        console.log('searchLC = ', searchLC)
+        if (searchValue == ''){
+            showList()
+            return
+        }
+
+
+        let studentLC = []
+        console.log('leng = ', studentList.length)
+        for (let i=0; i<studentList.length; i++){
+            studentLC.push(studentList[i].toLowerCase())
+        }
+
+        console.log('studentLC == ', studentLC)
+        for (let i = 0; i < studentLC.length; i++) {
+            if (searchLC === studentLC[i]){
+                studentSearch.push(studentList[i])
+            }
+        }
+        showSearch()
+    }
+
+
+
+</script>

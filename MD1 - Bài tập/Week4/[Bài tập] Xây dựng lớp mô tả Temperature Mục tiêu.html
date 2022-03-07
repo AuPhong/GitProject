@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Xây dựng lớp mô tả Temperature
+        Mục tiêu</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    let Temperature = function (celsius){
+        celsius = parseFloat(celsius)
+        this.C = celsius
+        this.K = celsius + 253.15
+        this.F = celsius*1.8 +32
+    }
+
+    let temp = new Temperature(30)
+    console.log(temp.F)
+</script>

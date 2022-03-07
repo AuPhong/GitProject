@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Xây dựng lớp Date</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    let date = function (day, month, year){
+        this.day = day
+        this.month = month
+        this.year = year
+        this.getDay = function (){
+            return this.day
+        }
+        this.getMonth = function (){
+            return this.month
+        }
+        this.getYear = function (){
+            return this.year
+        }
+        this.setDay = function (d){
+            this.day = d
+        }
+        this.setMonth = function (m){
+            this.month = m
+        }
+        this.setYear = function (y){
+            this.year = y
+        }
+        this.toString = function (){
+            return this.day+'/'+this.month+'/'+this.year
+        }
+    }
+
+    let date1 = new date(21,12,2021)
+    date1.setDay(25)
+    date1.setMonth(12)
+    date1.setYear(2020)
+    console.log(date1)
+    console.log(date1.toString())
+</script>

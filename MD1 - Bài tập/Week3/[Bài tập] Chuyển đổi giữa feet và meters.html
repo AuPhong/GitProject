@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+Input foot value &nbsp;<input type="number" id="feet" oninput="footToMeter()"><br><br>
+Input meter value&nbsp;<input type="number" id="meter" oninput="meterToFoot()">
+
+</body>
+</html>
+
+<script>
+
+    function footToMeter() {
+        let feet = document.getElementById('feet').value
+        document.getElementById('meter').value = feet * 0.305
+    }
+
+    function meterToFoot() {
+        let meter = document.getElementById('meter').value
+        document.getElementById('feet').value = meter * 3.279
+    }
+
+</script>

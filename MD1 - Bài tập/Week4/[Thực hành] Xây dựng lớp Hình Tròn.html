@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Xây dựng lớp Hình Tròn</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    let Circle = function (radius, color){
+        radius = parseFloat(radius)
+        this.getRadius = radius
+        this.getColor = color
+        this.getArea = function (){
+            return Math.PI*radius*radius
+        }
+    }
+
+    let circle = new Circle(5, 'blue')
+    console.log(circle.getRadius)
+    console.log(circle.getColor)
+    console.log(circle.getArea())
+</script>

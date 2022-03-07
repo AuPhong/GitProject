@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+</head>
+<body>
+<h3 id="total">Total: </h3>
+<input type="text" id="productName">
+<input type="button" onclick="add()" value="add">
+<input type="button" onclick="remove()" value="Delete">
+<h4 id="h4"></h4>
+
+</body>
+</html>
+
+<script>
+
+
+    let basket = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiami Redmi Note 4', 'Apple iPhone 6S', 'Xiami Mi 5s Plus', 'Apple iPhone 8 plus', 'Fuijitsu F-04E', 'Oppo A71']
+    let newProduct = document.getElementById('productName')
+    document.getElementById('total').innerHTML += basket.length
+
+    function add() {
+        basket.push(newProduct.value)
+        display()
+        document.getElementById('total').innerHTML = 'Total: ' + basket.length
+    }
+
+    function remove() {
+        basket.pop()
+        display()
+        document.getElementById('total').innerHTML = 'Total: ' + basket.length
+        console.log(basket)
+    }
+
+    function display() {
+        let basketList = ""
+        for (let i = 0; i < basket.length; i++) {
+            basketList += "<h4>" + basket[i] + '</h4>'
+            document.getElementById('h4').innerHTML = basketList
+        }
+    }
+
+    display()
+
+
+    // function add() {
+    //     productName.push(newProduct.value)
+    //     display()
+    // }
+    //
+    // function display() {
+    //     let bracket = ''
+    //     for (let i = 0; i < productName.length; i++) {
+    //         // bracket.push(productName[i])
+    //         bracket += '<h4>'+productName[i]+'</h4>'
+    //         document.getElementById('h4').innerHTML = bracket
+    //     }
+    // }
+    //
+    // display()
+</script>
+

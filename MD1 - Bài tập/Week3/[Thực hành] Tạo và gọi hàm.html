@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Tạo và gọi hàm</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+  function continueGame(answer){
+    let result
+    if(answer){
+      result = "Let's play"
+    }
+    else{
+      result = "Enough for today"
+    }
+    return result
+  }
+
+
+  let answer1 = confirm("Shall you continue playing?")
+  alert(continueGame(answer1))
+  // let theAnswer = continueGame(answer1)
+  // alert(theAnswer)
+
+</script>
