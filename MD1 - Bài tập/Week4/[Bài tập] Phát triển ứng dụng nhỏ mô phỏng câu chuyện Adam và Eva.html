@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  class Apple{
+    constructor() {
+        this.weight = 10
+    }
+    getWeight(){
+        return this.weight
+    }
+    decrease(){
+        this.weight--
+    }
+    isEmpty(){
+        if (this.weight){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+  }
+
+  class Human{
+      constructor(name,gender,weight) {
+          this.name = name
+          this.gender = gender
+          this.weight = weight
+      }
+      speak(a){
+          console.log(this.name + ' said: ' + a)
+      }
+      eatApple(a){
+          if(a.weight>0){
+              this.weight ++
+              a.weight--
+          }
+      }
+      checkApple(a){
+          return a.weight
+      }
+      getInfo(a){
+          // weight: return this.weight
+          // name: return this.name
+          // gender: return this.gender
+          console.log('Name: '+a.name+' Gender: '+a.gender+' Weight: '+a.weight)
+      }
+
+  }
+
+  let a = new Apple()
+  let Adam = new Human('Adam','male',50)
+  let Eva = new Human('Eva','female',40 )
+
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  Adam.eatApple(a)
+  console.log(Adam.weight)
+  console.log(a.weight)
+  console.log(Adam.speak('faef'))
+
+  console.log(Eva.getInfo(Adam))
+</script>

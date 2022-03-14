@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Xây dựng lớp mô phỏng sự hoạt động của đèn pin</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  class Battery {
+    setEnergy(energy){
+      this.energy = energy
+    }
+    getEnergy(){
+      return this.energy
+    }
+    decreaseEnergy(){
+      if (this.energy>0){
+        this.energy--
+      }
+    }
+  }
+
+  class FlashLamp{
+    setBattery(battery){
+      this.battery = battery
+    }
+    getBatteryInfo(){
+      return this.battery.getEnergy()
+    }
+    turnOn(){
+      this.status = true
+    }
+    turnOff(){
+      this.status = false
+    }
+    light(){
+      if(this.status){
+        alert('Lighting')
+      }
+      else{
+        alert('Not lighting')
+      }
+    }
+  }
+
+  let panasonic = new Battery()
+  panasonic.setEnergy(30)
+  // console.log(panasonic.getEnergy())
+  let lamp = new FlashLamp()
+  lamp.setBattery(panasonic)
+  // console.log(lamp.battery)
+  console.log(lamp.getBatteryInfo())
+  lamp.turnOn()
+  lamp.light()
+</script>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Phát triển game lái xe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .img{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<!--<img src="./img/car (1).png" class="img" id="car">-->
+<canvas width="500px" height="500px" style="border: 1px solid" id="myCanvas"></canvas>
+</body>
+</html>
+
+<script>
+    function game(){
+        let canvas = document.getElementById('myCanvas')
+        let ctx = canvas.getContext('2d')
+        let img = document.getElementById('car')
+        ctx.drawImage(img, 20, 20)
+    }
+
+</script>

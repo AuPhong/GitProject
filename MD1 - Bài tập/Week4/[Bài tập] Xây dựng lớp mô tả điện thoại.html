@@ -10,57 +10,145 @@
 </html>
 
 <script>
-    let Mobile = function (battery, onWritingMess, receivedMess, sentMess, power){
-        if (battery>100){
-            battery = 100
+
+    class Mobile {
+        // battery = 90;
+        // onWritingMess = [];
+        // receivedMess = [];
+        // sentMess = [];
+        // power = 'On';
+        // message = ''
+        constructor() {
+            this.battery = +90
+            this.onWritingMess = []
+            this.receivedMess = []
+            this.sentMess = []
+            this.power = 'Off'
+            this.message = ''
         }
-        else if (battery<0){
-            battery=0
-        }
-        onWritingMess = []
-        receivedMess = []
-        sentMess = []
-        this.battery = battery
-        this.onWritingMess = onWritingMess
-        this.receivedMess = receivedMess
-        this.sentMess = sentMess
-        this.checkPower = function (){
-            if (power=='on'){
-                return 'Phone is on'
+        turnOnOff(){
+            if (this.power == 'Off'){
+                this.power = 'On'
+                alert('Phone is on')
             }
-            else if (power=='off'){
-                return 'Phone is off'
+            else if (this.power == 'On'){
+                this.power = 'Off'
+                alert('The phone is off')
+            }
+        }
+        charge(a){
+            if (this.battery<(100-a)){
+                this.battery +=a
             }
             else{
-                return 'Phone is die'
+                alert('Battery is full')
             }
         }
-        this.turnOn = function (){
-            return power = 'on'
-        }
-        this.charge = function (num){
-            this.battery+=num
-        }
-        this.writingMess = function (abc){
-            if (power == 'on'){
-                onWritingMess.push(abc)
-                this.battery-=1
+
+        writeMess(){
+            if (this.battery>0 && this.power=='On'){
+                let mess = prompt('Input message')
+                this.onWritingMess.push(mess)
+                this.battery -= 10
+            }
+            else{
+                alert('Turn on or Charge the phone')
             }
         }
-        this.send = function (){
-
+        setMess(mess){
+            this.message = mess
         }
-
+        getMess(){
+            return this.message
+        }
+        sendMess(message,mobile){
+            if (this.battery>0 && this.power=='On'){
+                mobile.setMess(message)
+                mobile.receivedMess.push(message)
+                this.sentMess.push(message)
+                this.battery -= 10
+                mobile.battery -=10
+            }
+            else{
+                alert('Turn on or Charge the phone')
+            }
+        }
 
     }
 
-    let mobile = new Mobile(90,7,7,7,'off')
-    let a = mobile.charge(1)
+    // let nokia = new Mobile()
+    // let iphone = new Mobile()
+    // nokia.turnOnOff()
+    // nokia.sendMess('efa',iphone)
+    // nokia.sendMess('abcd',iphone)
+    // nokia.sendMess('bfaek',iphone)
+    // nokia.sendMess('bfaek',iphone)
+    // nokia.sendMess('bfaek',iphone)
+    // nokia.sendMess('bfaek',iphone)
+    // nokia.sendMess('bfaek',iphone)
+    // nokia.sendMess('bfaek',iphone)
+    // nokia.sendMess('bfaek',iphone)
+    // nokia.sendMess('bfaek',iphone)
+    // console.log(iphone.receivedMess)
+    // console.log(nokia.sentMess)
+    // console.log(nokia.battery)
 
-    let b = mobile.battery
-    console.log(b)
-    console.log(a)
-    console.log(mobile.checkPower())
-    mobile.writingMess('abc')
-    console.log(mobile.onWritingMess)
+    // nokia.charge(11)
+    // console.log(nokia.battery)
+    // nokia.turnOnOff()
+    // nokia.writeMess()
+    // console.log(nokia.onWritingMess)
+
+
+
+
+
+
+
+    // var Mobile = function (battery, onWritingMess, receivedMess, sentMess, power){
+    //     if (battery>100){
+    //         battery = 100
+    //     }
+    //     else if (battery<0){
+    //         battery=0
+    //     }
+    //     onWritingMess = []
+    //     receivedMess = []
+    //     sentMess = []
+    //     this.battery = battery
+    //     this.onWritingMess = onWritingMess
+    //     this.receivedMess = receivedMess
+    //     this.sentMess = sentMess
+    //     this.checkPower = function (){
+    //         if (power=='on'){
+    //             return 'Phone is on'
+    //         }
+    //         else if (power=='off'){
+    //             return 'Phone is off'
+    //         }
+    //         else{
+    //             return 'Phone is die'
+    //         }
+    //     }
+    //     this.turnOn = function (){
+    //         return power = 'on'
+    //     }
+    //     this.charge = function (num){
+    //         this.battery+=num
+    //     }
+    //     this.writingMess = function (abc){
+    //         if (power == 'on'){
+    //             onWritingMess.push(abc)
+    //             this.battery-=1
+    //         }
+    //     }
+    //     this.send = function (a,mess){
+    //         a = new Mobile()
+    //         a.receivedMess.push(mess)
+    //     }
+
+
+
+
+
 </script>

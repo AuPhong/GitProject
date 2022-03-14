@@ -6,75 +6,109 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        table {
+            border-spacing: unset;
+            border: solid 1px;
+            width: 100%;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid;
+        }
+    </style>
 </head>
 <body>
-
+<h1>Student manager</h1>
+<span id="span"></span>
+<input type="text" id="createText">
+<button id="creatButton" onclick="creatStudent()">Create</button>
+<input type="text" id="searchText" oninput="search()">
+<button id="searchButton" onclick="search()">Search</button>
+<br><br>
+<table>
+    <tr>
+        <th>STT</th>
+        <th>Họ tên</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tbody id="tbody">
+    </tbody>
+</table>
 </body>
 </html>
 
-<script>
+<script !src="">
+    let studentList = ['Black Dog', 'Yellow Cat', 'Blue Bird', 'Gradient Human']
+    let searchList = []
 
-    // Tham tri
-    // let arr = [0,1]
-    // function thamChieu(thamso){
-    //     thamso[0] = 100
-    // }
-    // thamChieu(arr)
-    // console.log(arr)
-
-    // Tham chieu
-    // let x = 10
-    // function thamTri(x){
-    //     x=100
-    // }
-    // thamTri(x)
-    // console.log(x)
-
-    // function print(a){
-    //     for (let i=1; i<=a; i++){
-    //         document.write(i)
-    //     }
-    // }
-    // print(5)
-
-// let arr = [1,2,3,4,5,6]
-//     function avg(arr) {
-//         let sum = 0
-//         for(let i = 0; i<arr.length; i++){
-//             sum += arr[i]
-//         }
-//         return sum/ arr.length
-//     }
-//
-//     console.log(avg(arr))
-
-    // function method(a,b){
-    //     return a+b
-    //
-    // }
-
-    let person = {
-        name: {
-            firsName: 'Bob',
-            lastName: 'Smith'
-        },
-        age: 32,
-        gender: 'male',
-        interests: ['music', 'skiing'],
-        bio: function() {
-            alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
-        },
-        greeting: function() {
-            alert('Hi! I\'m ' + this.name[0] + '.');
+    function showList() {
+        let drawTable = ''
+        for (let i = 0; i < studentList.length; i++) {
+            drawTable += `<tr>
+                            <td>${i + 1}</td>
+                            <td>${studentList[i]}</td>
+                            <td><button onclick="editStudent(${i})">Edit</button></td>
+                            <td><button onclick="deleteStudent()">Delete</button></td>
+                          </tr>`
         }
-    };
-    // console.log(person.name)
-    // person.age = 34
-    person.eye = 'blue'
-    let myHeight = 'height'
-    let myValue = '1.75m'
-    person[myHeight] = myValue
-    console.log(person)
+        document.getElementById('tbody').innerHTML = drawTable
+    }
+
+    showList()
+
+    function creatStudent() {
+        let newStudent = document.getElementById('createText').value
+        if (newStudent.trim()) {
+            studentList.push(newStudent)
+            showList()
+        }
+    }
+
+    function editStudent(index) {
+        let editName = prompt('Input the name to edit: ', studentList[index])
+        studentList[index] = editName
+        showList()
+    }
+
+    function deleteStudent(index) {
+        studentList.splice(index, 1)
+        showList()
+    }
+
+    function showSearchList() {
+        let drawTable = ''
+        for (let i = 0; i < searchList.length; i++) {
+            drawTable += `<tr>
+                            <td>${i + 1}</td>
+                            <td>${searchList[i]}</td>
+                            <td><button onclick="editStudent(${i})">Edit</button></td>
+                            <td><button onclick="deleteStudent()">Delete</button></td>
+                          </tr>`
+        }
+        document.getElementById('tbody').innerHTML = drawTable
+    }
+
+    function search(){
+        let searchValue = document.getElementById('searchText').value.toLowerCase()
+        let studentListLC = []
+        searchList = []
+        if (searchValue == ''){
+            showList()
+            return
+        }
+        for (let i=0; i<studentList.length; i++){
+            studentListLC[i] = studentList[i].toLowerCase()
+        }
+        for (let i=0; i<studentList.length; i++){
+            if (searchValue == studentListLC[i]){
+                searchList.push(studentList[i])
+            }
+        }
+        showSearchList()
+    }
 
 
 </script>

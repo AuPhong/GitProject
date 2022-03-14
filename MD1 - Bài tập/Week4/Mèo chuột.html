@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    class Animal {
+        constructor(name, weight, speed) {
+            this.name = name
+            this.weight = weight
+            this.speed = speed
+        }
+
+        getWeight() {
+            return this.weight
+        }
+
+        setWeight(a) {
+            this.weight = a
+        }
+
+        getSpeed() {
+            return this.speed
+        }
+
+        say(a) {
+            console.log(this.name + ' said: ' + a)
+        }
+
+    }
+
+    class Cat extends Animal {
+        constructor(name, weight, speed) {
+            super(name, weight, speed);
+        }
+
+        catchMouse(mouse) {
+            if (super.getSpeed() > mouse.getSpeed()) {
+                mouse.setStatus(false)
+                super.say('Catch it!!')
+            } else {
+                console.log(super.getSpeed())
+                super.say('So fast')
+            }
+        }
+
+        eatMouse(mouse) {
+            if (mouse.status) {
+                super.say('Cannot eat yet')
+            } else {
+                super.setWeight(super.getWeight() + mouse.getWeight())
+                super.say("That's delicious")
+            }
+        }
+    }
+
+
+    class Mouse extends Animal {
+        constructor(name, weight, speed) {
+            super(name, weight, speed);
+            this.status = true
+        }
+        setStatus(a) {
+            this.status = a
+        }
+        getStatus() {
+            if (this.status) {
+                super.say("I'm still live")
+            } else {
+                super.say("I'm dead")
+            }
+        }
+    }
+
+    let cat = new Cat('Tom', 30, 50)
+    let mouse = new Mouse('Jerry', 10, 60)
+    cat.catchMouse(mouse)
+    cat.eatMouse(mouse)
+    mouse.getStatus()
+</script>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>[Bài tập] Xây dựng lớp mô tả hình chữ nhật</title>
 </head>
-<body>
+<body onclick="drawRetangle()">
 <canvas id="myCanvas" width="1250px" height="600px" style="border: solid 1px"></canvas>
 </body>
 </html>
@@ -15,7 +15,7 @@
         return Math.floor(Math.random()*255)
     }
 
-    let Retangle = function (length, width) {
+    let Rectangle = function (length, width) {
         this.length = length
         this.width = width
         this.area = length * width
@@ -32,7 +32,7 @@
 
     }
 
-    let rec = new Retangle(150, 100)
+    let rec = new Rectangle(150, 100)
     console.log(rec.area)
     rec.drawRetangle()
     console.log(rec.perimetter)
@@ -44,5 +44,5 @@
     //     ctx.stroke();
     // }
 
-    drawRetangle()
+
 </script>
