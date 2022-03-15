@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Phát triển chương trình sử dụng Remote để điều khiển Tivi</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    class Remote {
+        constructor(code) {
+            this.code = code
+        }
+
+        getCode() {
+            return this.code
+        }
+
+        switchChanel(TV, chanel) {
+            TV.setChanel(chanel)
+        }
+
+        turnVolume(TV, volume){
+            TV.setVolume(volume)
+        }
+        turnOff(TV){
+           TV.setStatus('Off')
+        }
+        turnOn(TV){
+             TV.setStatus('On')
+        }
+    }
+
+    class TV{
+        constructor(status, volume, chanel) {
+            this.status = status
+            this.volume = volume
+            this.chanel = chanel
+        }
+        setStatus(on){
+            this.status = on
+        }
+        getStatus(){
+            return this.status
+        }
+        setVolume(num){
+            this.volume = num
+        }
+        getVolume(){
+            return this.volume
+        }
+        setChanel(chanel){
+            this.chanel = num
+        }
+        getChanel(){
+            return this.chanel
+        }
+    }
+
+
+
+</script>
